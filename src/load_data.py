@@ -42,6 +42,12 @@ def load_acs_profiles() -> pd.DataFrame:
     merged_df = merged_df.merge(df5, on='CountyFIPS', how='outer', suffixes=('', '_DP05'))
     return merged_df
 
+def load_acs_cluster() -> pd.DataFrame:
+    """Load ACS Cluster data from a CSV file and preprocess it."""
+    url = f"{GITHUB_BASE_URL}ACS features - correlations.tsv"
+    url = url.replace(" ", "%20")
+    df = pd.read_csv(url, sep='\t')
+    return df[['Column Name', 'cluster', 'subcluster']]
     
 def load_acs_vars() -> pd.DataFrame:
     """Load ACS Data Profile variable metadata from a JSON file.
