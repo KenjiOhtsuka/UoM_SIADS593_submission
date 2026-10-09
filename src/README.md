@@ -1,9 +1,23 @@
 
 ## File List
 
-- [01_target_variable.ipynb](src/01_target_variable.ipynb)
-- [02_correlation.ipynb](src/02_correlation.ipynb)
-- [03_key_independent_variables.ipynb](src/03_key_independent_variables.ipynb)
+We have multiple files in this submission.
+
+- [load_data.py](load_data.py)
+
+    Utility file file to load data and basic data preprocessing.
+
+- [01_target_variable.ipynb](01_target_variable.ipynb)
+
+    The notebook explores the target variable, `MHLTH_AdjPrev`, and its distribution across U.S. counties.
+
+- [02_correlation.ipynb](02_correlation.ipynb)
+
+    The notebook examines the correlation between the target variable and ACS variables.
+
+- [03_key_independent_variables.ipynb](03_key_independent_variables.ipynb)
+
+    The notebook identifies key independent variables that are highly correlated with the target variable.
 
 ## Data
 
