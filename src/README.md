@@ -5,7 +5,7 @@ We have multiple files in this submission.
 
 - [load_data.py](load_data.py)
 
-    Utility file file to load data and basic data preprocessing.
+    Utility file to load data and basic data preprocessing.
 
 - [01_target_variable.ipynb](01_target_variable.ipynb)
 
@@ -25,10 +25,13 @@ In this project, we use PLACES and ACS (American Community Survey) datasets.
 The PLACES contains the target variable, `MHLTH_AdjPrev`,
 and we use the ACS profile dataset to find regional characteristics that are related to mental health across U.S. counties.
 
-We get the data via downloading or API calls with API keys.
-But this submission code retrieves the data from public GitHub repository.
+All data is publicly accessible and we got the data via downloading or API calls with API keys.
+But this submission code retrieves the data from our public GitHub repository.
 It is because the data is too large to be included in the submission,
-and downloading from the original source requires API keys and authentication.
+and some API calls require API keys and authentication.
+In addition, the original data sources may change over time, which can break the code.
+
+Original data sources are explained below.
 
 ### PLACES County Data (GIS Friendly Format) 2025 release
 
@@ -50,8 +53,10 @@ We use Profile Tables.
 We downloaded several JSON dataset with API keys.
 There is the instruction to get API key is in [https://www.census.gov/data/developers/data-sets/acs-5year.html](https://www.census.gov/data/developers/data-sets/acs-5year.html).
 
-- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP02)&for=country:*&in=state:*&key=__YOUR_KEY__
-- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP03)&for=country:*&in=state:*&key=__YOUR_KEY__
-- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP04)&for=country:*&in=state:*&key=__YOUR_KEY__
-- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP05)&for=country:*&in=state:*&key=__YOUR_KEY__
+We used the following API calls to get the data.
+
+- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP02)&for=county:*&in=state:*&key=__YOUR_KEY__
+- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP03)&for=county:*&in=state:*&key=__YOUR_KEY__
+- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP04)&for=county:*&in=state:*&key=__YOUR_KEY__
+- https://api.census.gov/data/2024/acs/acs5/profile?get=group(DP05)&for=county:*&in=state:*&key=__YOUR_KEY__
 - https://api.census.gov/data/2024/acs/acs5/profile/variables.json
