@@ -47,7 +47,7 @@ def load_acs_cluster() -> pd.DataFrame:
     url = f"{GITHUB_BASE_URL}ACS features - correlations.tsv"
     url = url.replace(" ", "%20")
     df = pd.read_csv(url, sep='\t')
-    return df[['Column Name', 'cluster', 'subcluster']]
+    return df[['Column Name', 'cluster']]
     
 def load_acs_vars() -> pd.DataFrame:
     """Load ACS Data Profile variable metadata from a JSON file.
