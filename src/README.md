@@ -30,6 +30,19 @@ We have multiple files in this submission.
 
     The notebook identifies key independent variables that are highly correlated with the target variable.
 
+- [data/PLACES__County_Data_(GIS_Friendly_Format),_2025_release_20260905.csv](data/PLACES__County_Data_(GIS_Friendly_Format),_2025_release_20260905.csv)
+
+    The PLACES dataset in CSV format.
+
+- [data/variables.json](data/variables.json)
+
+    The ACS variable metadata in JSON format.
+
+- [data/ACS_feature_cluster.tsv](data/ACS_feature_cluster.tsv)
+
+    The ACS variable cluster information in TSV format.
+    The cluster information is manually assigned based on the ACS variable metadata.
+
 ## Data
 
 In this project, we use PLACES and ACS (American Community Survey) datasets.
@@ -37,19 +50,19 @@ The PLACES contains the target variable, `MHLTH_AdjPrev`,
 and we use the ACS profile dataset to find regional characteristics that are related to mental health across U.S. counties.
 
 All data is publicly accessible and we got the data via downloading or API calls with API keys.
-But this submission code retrieves the data from our public GitHub repository.
+In this submission code retrieves the ACS data from our public GitHub repository.
 It is because the data is too large to be included in the submission,
-and some API calls require API keys and authentication.
+and API calls require API keys and authentication.
 In addition, the original data sources may change over time, which can break the code.
 
 Original data sources are explained below.
 
 ### PLACES County Data (GIS Friendly Format) 2025 release
 
-PLACES provides county-level estimates for multiple health measures across the US, including mental health status MHLTH_AdjPrev.
+PLACES provides county-level estimates for multiple health measures across the US, including mental health status `MHLTH_AdjPrev`.
 We just use MHLTH_AdjPrev in the PLACES dataset.
 
-The data can be downloaded from [https://data.cdc.gov/500-Cities-Places/PLACES-County-Data-GIS-Friendly-Format-2025-releas/i46a-9kgh/about_data](https://data.cdc.gov/500-Cities-Places/PLACES-County-Data-GIS-Friendly-Format-2025-releas/i46a-9kgh/about_data) as CSV without API key.
+The data can be downloaded from [https://data.cdc.gov/500-Cities-Places/PLACES-County-Data-GIS-Friendly-Format-2025-releas/i46a-9kgh/about_data](https://data.cdc.gov/500-Cities-Places/PLACES-County-Data-GIS-Friendly-Format-2025-releas/i46a-9kgh/about_data) as CSV.
 
 
 ### ACS 5-Year Data (2009-2024)

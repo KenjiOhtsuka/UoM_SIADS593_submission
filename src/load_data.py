@@ -22,8 +22,11 @@ def load_acs_profile(label: str) -> pd.DataFrame:
 
 def load_places() -> pd.DataFrame:
     """Load Places data from a CSV file and preprocess it."""
-    url = f"{GITHUB_BASE_URL}PLACES__County_Data_(GIS_Friendly_Format),_2025_release_20260905.csv"
-    df = pd.read_csv(url, dtype={'CountyFIPS': str})
+    try:
+        df = pd.read_csv("data/PLACES__County_Data_(GIS_Friendly_Format),_2025_release_20260905.csv", dtype={'CountyFIPS': str})
+    except:
+        url = f"{GITHUB_BASE_URL}PLACES__County_Data_(GIS_Friendly_Format),_2025_release_20260905.csv"
+        df = pd.read_csv(url, dtype={'CountyFIPS': str})
     df['CountyFIPS'] = df['CountyFIPS'].str.zfill(5)
     # We don't use the population columns in this project, but if you want to use them,
     # you can uncomment the following lines to convert them to integers
@@ -44,9 +47,12 @@ def load_acs_profiles() -> pd.DataFrame:
 
 def load_acs_cluster() -> pd.DataFrame:
     """Load ACS Cluster data from a CSV file and preprocess it."""
-    url = f"{GITHUB_BASE_URL}ACS features - correlations.tsv"
-    url = url.replace(" ", "%20")
-    df = pd.read_csv(url, sep='\t')
+    try:
+        url = "data/ACS_feature_cluster.tsv"
+        df = pd.read_csv(url, sep='\t')
+    except:
+        url = f"{GITHUB_BASE_URL}ACS_feature_cluster.tsv"
+        df = pd.read_csv(url, sep='\t')
     return df[['Column Name', 'cluster']]
     
 def load_acs_vars() -> pd.DataFrame:
@@ -55,7 +61,8 @@ def load_acs_vars() -> pd.DataFrame:
     OUTPUTS:
         pd.DataFrame: The ACS Data Profile variable metadata.
     """
-    df = pd.read_json(
-        f"{GITHUB_BASE_URL}variables.json"
-    )
+    try:
+        df = pd.read_json("data/variables.json")
+    except:
+        df = pd.read_json(f"{GITHUB_BASE_URL}variables.json")
     return df
