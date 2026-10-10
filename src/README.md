@@ -1,7 +1,18 @@
+# UoM SIADS539 Submission
+
+This is the submission for SIADS539 course at University of Michigan.
 
 ## File List
 
 We have multiple files in this submission.
+
+- [README.md](README.md)
+
+    This file.
+
+- [requirements.txt](requirements.txt)
+
+    The file contains the list of required packages to run the code.
 
 - [load_data.py](load_data.py)
 
